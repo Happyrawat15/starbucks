@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="mediaquery.css">
+    <style>
+        body {
+            background-color: aliceblue;
+
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 90px;
+            background: white;
+            box-shadow: 0px 1px 6px 0px lightgrey;
+        }
+
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left {
+            cursor: pointer;
+        }
+
+        .header-right {
+            cursor: pointer;
+        }
+
+        .header-left ul {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        .header-left li {
+            display: inline-block;
+            padding: 30px;
+            font-weight: 700;
+        }
+
+        .header-left li:hover {
+            color: #00754a;
+        }
+
+        .header-right :hover {
+            color: #00754a;
+        }
+
+        .header-right .buttn:hover {
+            background-color: #00754a;
+        }
+
+        .search-input {
+            display: flex;
+            align-items: center;
+
+            padding: 5px 10px;
+            margin-right: 25px;
+            border-radius: 30px;
+            /* box-shadow: 0px 2px 2px 2px #e5e5e5; */
+
+
+        }
+
+        .search-input .icon {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .header-right .button {
+
+            width: 65px;
+            font-size: 14px;
+            border-width: 1px;
+            border-radius: 50px;
+            padding: 4px 8px;
+            margin: 10px;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.2;
+            transition: all .2s ease;
+        }
+
+        .header-right .buttn {
+
+            width: 80px;
+            font-size: 14px;
+            border-width: 1px;
+            border-radius: 50px;
+            padding: 5px 5px;
+            margin: 10px;
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: center;
+            transition: all .2s ease;
+            background-color: black;
+            color: white;
+        }
+
+        .btn{
+            display: none;
+            height: 30px;
+            margin-top: 2rem;
+        }
+        .offcanvas li{
+            list-style: none;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            
+        }
+        .offcanvas li:hover{
+            background-color: darkgray;
+        }
+
+        .main {
+            background-color: #1e3932;
+            padding: 25px;
+            height: 100%;
+            margin-top: 5px;
+
+        }
+
+        .main h5 {
+            font-size: 20px;
+            font-weight: 300;
+            color: #f9f9f9;
+            line-height: 1.2;
+            margin-left: 35px;
+        }
+
+        .main button {
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            border: 1px solid white;
+            color: #ffffff;
+            background-color: transparent;
+            margin-left: 115px;
+
+        }
+
+        .main1 {
+            background-color: white;
+            margin-bottom: 1em;
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .main1 h2 {
+            font-size: 25px;
+            font-weight: 600;
+            font-family: SoDoSans_Bold, Helvetica, sans-serif !important;
+            color: #1e3932;
+            margin: 40px 0px;
+        }
+
+        .main1 img:hover {
+            border: 2px solid red;
+        }
+
+        .main1 img {
+            border-radius: 50%;
+            width: 100px;
+            margin-left: 20px;
+        }
+
+        .main1 p {
+            text-align: center;
+            font-weight: 500;
+
+        }
+
+
+        .div-main {
+            border: 1px solid gray;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 1px #3e3e3e66;
+            margin: 0px 5px;
+        }
+
+        /* .div-main:hover{
+            background-color: #0e382c;
+            color: white;
+        } */
+
+        .div-main .col-4 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .div-main .col-4 img {
+            border-radius: 10px;
+        }
+
+        button.addcart {
+            background-color: #00754a;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            width: 75px;
+            height: 36px;
+            font-size: 13px;
+        }
+
+        button.addcart:hover {
+            background-color: #033020ed;
+        }
+
+        .addtocart {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sec h3 {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .sec span {
+            font-size: 10px;
+
+        }
+
+        .sec span.one {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .main3 {
+            background-color: white;
+            min-height: 250px;
+            width: 100%;
+        }
+
+        .main3 .container {
+            background-color: rgb(0 98 65);
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+
+        }
+
+        .main3 img {
+            width: 100px;
+            height: 190px;
+        }
+
+        .main3 p {
+            color: white;
+        }
+
+        .main3 .onea {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .main3 .oneb {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .main3 .onec {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .main3 .oned {
+            font-size: 14px;
+
+        }
+
+        .main3 .onee {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .main3 .button5 {
+            border: none;
+            border-radius: 10px;
+            width: 130px;
+            height: 45px;
+            position: relative;
+            top: 120px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .main4 {
+            background-color: #0e382c;
+            color: #bbb;
+            min-height: 300px;
+        }
+
+        .main4 h3 {
+            font-size: 20px;
+        }
+
+        .main4 li {
+            list-style: none;
+            padding: 10px;
+            font-size: 14px;
+            margin-left: -9px;
+        }
+
+        .main4 i {
+            font-size: 30px;
+            padding: 8px;
+        }
+
+        .main4 {
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+   
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-left">
+            <img src="star.png" alt="">
+            <ul>
+                <li class="menu">MENU</li>
+                <li>REWARDS</li>
+                <li>GIFT CARDS</li>
+            </ul>
+        </div>
+        <div class="header-right">
+
+            <div class="search-input">
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span> Find a store</span>
+
+                </div>
+               
+
+            </div>
+            <button class="button">Sign in</button>
+            <button class="buttn">Join now</button>
+        </div>
+        <div class="offcanvas offcanvas-end "id="canvas">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title">
+                    <img src="star.png" alt="">
+                </h1>
+                <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <li>Home</li>
+                <li>Gift</li>
+                <li>Order</li>
+                <li>Pay</li>
+                <li>Store</li>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvas"><i class="fa-solid fa-bars"></i></button>
+    </div>
+<div id="mobile_menu" style="display:none">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+    </ul>
+</div>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-9 text-center">
+                    <h5>Rewards are Pouring! Sign up now</h5>
+                </div>
+                <div class="col-sm-12  col-md-3">
+                    <button class="d-block mx-auto">know more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main1">
+        <div class="container">
+            <div class="row">
+                <h2>Handcrafted Curations</h2>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="a.jpg" class="img-fluid" alt="">
+                    <p> Bestseller</p>
+                </div>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="b.jpg" class="img-fluid" alt="">
+                    <p>Drinks</p>
+                </div>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="c.jpg" class="img-fluid" alt="">
+                    <p>Food</p>
+                </div>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="d.jpg" class="img-fluid" alt="">
+                    <p>Merchandise</p>
+                </div>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="e.jpg" class="img-fluid" alt="">
+                    <p>Coffee At Home</p>
+                </div>
+                <div class="col-sm-4 my-3 col-md-2">
+                    <img src="f.jpg" class="img-fluid" alt="">
+                    <p>Ready To Eat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <section class="sec">
+        <div class="container">
+            <h2>Barista Recommends</h2>
+            <div class="row justify-content-center align-items-center g-2 py-2">
+                <div class="col-md-4 my-2">
+                    <div class="div-main">
+                        <div class="row pb-3">
+                            <div class="col-4">
+                                <img src="a.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <h3>Java Chip Frappuccino</h3>
+                                <span> veg-item Cold coffee TALL(354 ML) .354 kcal
+                                </span>
+                            </div>
+                        </div>
+                        <div class="addtocart">
+                            <span class="one">₹ 351</span>
+                            <button class="addcart">Add Item</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-2">
+                    <div class="div-main">
+                        <div class="row pb-3">
+                            <div class="col-4">
+                                <img src="b.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <h3>Cold Coffee</h3>
+                                <span> veg-item Drinks TALL(354 ML) .354 kcal</span>
+                            </div>
+                        </div>
+                        <div class="addtocart">
+                            <span class="one">₹ 351</span>
+                            <button class="addcart">Add Item</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 my-2">
+                    <div class="div-main">
+                        <div class="row pb-3">
+                            <div class="col-4">
+                                <img src="c.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <h3>Food</h3>
+
+                                <span> veg-item Food TALL(354 ML) .354 kcal
+                                </span>
+                            </div>
+                        </div>
+                        <div class="addtocart">
+                            <span class="one">₹ 383</span>
+                            <button class="addcart">Add Item</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="main3 py-5">
+        <div class="container">
+
+            <div class="row py-1">
+                <div class="col-2">
+                    <img src="Bonus_Stars_2d6733cfde.png" alt="">
+                </div>
+                <div class="col-8">
+                    <p class="onea">Special offer</p>
+                    <p class="oneb">DOUBLE STARS</p>
+                    <p class="onec"> Double Your Stars on first 3 order placed through the app. Order from the wide menu
+                        range and collect it from the Barista. </p>
+                    <p class="oned">Starting From</p>
+                    <p class="onee">₹ 250.00</p>
+                </div>
+                <div class="col-2">
+                    <button class="button5">Order Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- footer starts from here -->
+
+    <div class="main4 py-5">
+        <div class="container">
+            <div class="row">
+        
+                   
+                    <div class="col-sm-3">
+                      <h3>About Us</h3>
+                        <li>Our Heritage</li>
+                        <li>Our Company</li>
+                        <li> Coffeehouse</li>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Responsibility</h3>
+                        <li>Community</li>
+                        <li>Ethical Sourcing</li>
+                        <li>Environment</li>
+                        <li>Diversity</li>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Quick Links</h3>
+                        <li>Delivery </li>
+                        <li>Delivery</li>
+                        <li>Careers</li>
+                        <li>Customer Service</li>
+                        <li>FAQs</li>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>SOCIAL MEDIA</h3>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <div>
+                        <img src="appstoreiOS.png">
+                        <img src="appstoreAndroid.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+            </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+            </script>
+          
+</body>
+
+</html>
